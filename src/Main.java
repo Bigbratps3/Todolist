@@ -18,7 +18,7 @@ public class Main
         System.out.println(Zadanie.getName());
         System.out.println(Zadanie.getId());
 
-        ;
+        ;/
 
         /*
         while(true){
