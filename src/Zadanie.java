@@ -1,32 +1,32 @@
 enum Status {
-    IN_PROGRESS,
-    DONE,
-    TODO
+    W_TRAKCIE,
+    ZROBIONE,
+    DO_ZROBIENIA
 }
 
 public class Zadanie {
 
     private static int id;//1
-    private static Status status;//Mleko
+    private static Status status;//ZROBIONE
     private static String tresc = "";//1234
 
 
-    Zadanie(int newid ,String newtresc){
-        id = newid + 1;
-        status = Status.TODO;
-        tresc = newtresc;
+    Zadanie(int new_id ,String new_tresc){
+        id = new_id + 1;
+        status = Status.DO_ZROBIENIA;
+        tresc = new_tresc;
     }
 
     static void changeStatus(String newStatus){
         switch (newStatus){
             case "inprogress":
-                status = Status.IN_PROGRESS;
+                status = Status.W_TRAKCIE;
                 return;
             case "todo":
-                status = Status.TODO;
+                status = Status.DO_ZROBIENIA;
                 return;
             case "done":
-                status = Status.DONE;
+                status = Status.ZROBIONE;
                 return;
             default:
                 System.out.println("error");
@@ -54,6 +54,8 @@ public class Zadanie {
 
         tresc = x;
     }
+
+
 
     //Scanner OB = new Scanner(System.in);
     //String trescZ = OB.nextLine();

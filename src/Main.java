@@ -1,24 +1,35 @@
 
+import java.util.Objects;
 import java.util.Scanner; // import the Scanner class
 import java.util.ArrayList;
 
 public class Main
 {
     public static void main(String[] args) {
-        //Scanner OB = new Scanner(System.in);
+        Scanner OB = new Scanner(System.in);
         ArrayList<String> lista = new ArrayList<>();
         Zadanie zad = new Zadanie(lista.size(),"Kupić mleko" );
 
-        int number = 1;
+        while(true) {
+            String trescZ = OB.nextLine();
+            if (!Objects.equals(trescZ, "usun")) {//usuwa wszystko w liście
+                lista.remove(trescZ);
+            }
+            if (trescZ.isEmpty()) {
+                System.out.println("Co masz dzisiaj do zrobienia: ");
+                System.out.println(lista);
+            }
+            //if(){
 
-        System.out.println("Co masz dzisiaj do zrobienia: ");
-        System.out.println(Zadanie.getName());
+            //}
+        }
 
-        Zadanie.changeTresc("2342424234123412341");
-        System.out.println(Zadanie.getName());
-        System.out.println(Zadanie.getId());
+//        System.out.println(Zadanie.getName());
+//        Zadanie.changeTresc("2342424234123412341");//pokazuje jak działa changeTresc
+//        System.out.println(Zadanie.getName());
+//        System.out.println(Zadanie.getId());
 
-        ;/
+
 
         /*
         while(true){
