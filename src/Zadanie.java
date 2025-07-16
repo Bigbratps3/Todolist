@@ -54,9 +54,4 @@ public class Zadanie {
 
         tresc = x;
     }
-
-
-
-    //Scanner OB = new Scanner(System.in);
-    //String trescZ = OB.nextLine();
 }

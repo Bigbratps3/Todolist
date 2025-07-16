@@ -12,16 +12,16 @@ public class Main
 
         while(true) {
             String trescZ = OB.nextLine();
-            if (!Objects.equals(trescZ, "usun")) {//usuwa wszystko w liście
+            lista.add(trescZ);
+            if (trescZ.equals("usun")) {
                 lista.remove(trescZ);
             }
             if (trescZ.isEmpty()) {
                 System.out.println("Co masz dzisiaj do zrobienia: ");
                 System.out.println(lista);
+                return;
             }
-            //if(){
 
-            //}
         }
 
 //        System.out.println(Zadanie.getName());
