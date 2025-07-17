@@ -22,7 +22,7 @@ public class Main
                 System.out.println("Co masz dzisiaj do zrobienia: ");
                 zad.drukujliste();
                 return;
-            }
+            }//
             lista.add(new Zadanie(Zadanie.getId(),trescZ));
         }
 
