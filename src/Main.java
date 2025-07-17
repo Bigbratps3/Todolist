@@ -7,21 +7,23 @@ public class Main
 {
     public static void main(String[] args) {
         Scanner OB = new Scanner(System.in);
-        ArrayList<String> lista = new ArrayList<>();
+        ArrayList<Zadanie> lista = new ArrayList<>();
         Zadanie zad = new Zadanie(lista.size(),"Kupić mleko" );
 
         while(true) {
             String trescZ = OB.nextLine();
-            lista.add(trescZ);
+
             if (trescZ.equals("usun")) {
                 lista.remove(trescZ);
+                zad.drukujliste();
+
             }
             if (trescZ.isEmpty()) {
                 System.out.println("Co masz dzisiaj do zrobienia: ");
-                System.out.println(lista);
+                zad.drukujliste();
                 return;
             }
-
+            lista.add(new Zadanie(Zadanie.getId(),trescZ));
         }
 
 //        System.out.println(Zadanie.getName());

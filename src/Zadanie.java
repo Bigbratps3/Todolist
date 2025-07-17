@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 enum Status {
     W_TRAKCIE,
     ZROBIONE,
@@ -6,17 +8,20 @@ enum Status {
 
 public class Zadanie {
 
-    private static int id;//1
-    private static Status status;//ZROBIONE
-    private static String tresc = "";//1234
+    private  int id;//1
+    private  Status status;//ZROBIONE
+    private  String tresc = "";//1234
 
 
     Zadanie(int new_id ,String new_tresc){
-        id = new_id + 1;
+        id = new_id;
         status = Status.DO_ZROBIENIA;
         tresc = new_tresc;
     }
 
+    public void drukujliste (){
+        System.out.println(Zadanie.getId() + " " + Scanner());
+    }
     static void changeStatus(String newStatus){
         switch (newStatus){
             case "inprogress":
@@ -39,7 +44,7 @@ public class Zadanie {
     }
 
     static int getId(){
-        return id;
+        return ++id;
     }
 
     static void changeTresc(String x){
