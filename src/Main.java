@@ -8,23 +8,41 @@ public class Main
     public static void main(String[] args) {
         Scanner OB = new Scanner(System.in);
         ArrayList<Zadanie> lista = new ArrayList<>();
-        Zadanie zad = new Zadanie(lista.size(),"Kupić mleko" );
 
-        while(true) {
-            String trescZ = OB.nextLine();
+        String komenda = "";
+        do {
+            komenda = OB.nextLine();
+            String trescZ = "";
 
-            if (trescZ.equals("usun")) {
-                lista.remove(trescZ);
-                zad.drukujliste();
-
-            }
-            if (trescZ.isEmpty()) {
+            if (komenda.equals("exit")) {
+                trescZ = OB.nextLine();
+                Zadanie zad = new Zadanie(lista.size(), trescZ);
                 System.out.println("Co masz dzisiaj do zrobienia: ");
-                zad.drukujliste();
                 return;
-            }//
-            lista.add(new Zadanie(Zadanie.getId(),trescZ));
-        }
+            }
+            if (komenda.equals("dodaj")){
+                while (true) {
+                    Zadanie zad = new Zadanie(lista.size(), trescZ);
+                    if (komenda.equals("dodaj")) {
+
+                        System.out.println("Co masz dzisiaj do zrobienia?");
+                        trescZ = OB.nextLine();
+                        lista.add(zad);
+                        if(trescZ.equals("koniec")){
+                            zad.drukujliste();
+                            break;
+                        }
+                    }
+                    else{
+                        return;
+                    }
+                }// koniec dodaj loop
+            }
+            //TODO trzeba jeszcze pokazywanie wszystkich zadaniań np komenda = pokaż
+            //TODO no i możliwośc przestania dodawania w sensie powinieneś móc dodać tyle ile chcesz
+
+        }//do
+        while (!komenda.equals("koniec"));
 
 //        System.out.println(Zadanie.getName());
 //        Zadanie.changeTresc("2342424234123412341");//pokazuje jak działa changeTresc

@@ -8,9 +8,9 @@ enum Status {
 
 public class Zadanie {
 
-    private  int id;//1
-    private  Status status;//ZROBIONE
-    private  String tresc = "";//1234
+    private static  int id;//1
+    private  static Status status;//ZROBIONE
+    private  static String tresc = "";//1234
 
 
     Zadanie(int new_id ,String new_tresc){
@@ -20,7 +20,7 @@ public class Zadanie {
     }
 
     public void drukujliste (){
-        System.out.println(Zadanie.getId() + " " + Scanner());
+        System.out.println(Zadanie.getId() + " " + getName());
     }
     static void changeStatus(String newStatus){
         switch (newStatus){
@@ -38,7 +38,7 @@ public class Zadanie {
                 return;
         }
     }
-
+    
     static String getName(){
         return tresc;
     }
